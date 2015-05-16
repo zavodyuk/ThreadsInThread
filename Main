@@ -1,0 +1,22 @@
+package threadsInThread;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+	String stop = "";
+	NewThread first = new NewThread();
+	first.start();
+	while(true){
+	    stop = s.nextLine();
+	    if(stop.equals("stop")){
+		first.interrupt();
+		break;
+	    }
+	}
+	s.close();
+    }
+
+}
